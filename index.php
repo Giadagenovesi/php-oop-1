@@ -23,6 +23,11 @@ class Movie {
         $this->genre = $_genre;
         $this->runningTime = $_runningTime;
     }
+
+    // Metodo
+    public function printFilmInfo() {
+        return "Titolo: {$this->title}, Durata: {$this->runningTime}, Genere: {$this->genre}.";
+    }
 }
 
 $titanic = new Movie("Titanic","English", "Drama","195 minutes");
@@ -36,6 +41,6 @@ var_dump($the_big_lebowski);
 var_dump($miseria_nobilta);
 
 
-echo($titanic);
-echo($the_big_lebowski);
-echo($miseria_nobilta);
+echo($titanic->printFilmInfo());
+echo($the_big_lebowski->printFilmInfo());
+echo($miseria_nobilta->printFilmInfo());
