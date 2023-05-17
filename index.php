@@ -7,38 +7,18 @@
 
 <?php
 
-class Movie {
-    //dichiarazione attributi
-    public $title;
-    public $ogLanguage;
-    public $release;
-    public $runningTime;
-    public $genre;
+require_once __DIR__ . "/Models/Movie.php";
+require_once __DIR__ . "/Models/Genre.php";
 
+$titanic = new Movie("Titanic","English", (new Genre ("Drama")),"195 minutes");
 
-    //Costruttore
-    function __construct($_title, $_ogLanguage, $_genre, $_runningTime) {
-        $this->title = $_title;
-        $this->ogLanguage = $_ogLanguage;
-        $this->genre = $_genre;
-        $this->runningTime = $_runningTime;
-    }
+$the_big_lebowski = new Movie("The Big Lebowski", "English", (new Genre ("Comedy")), "117 minutes");
 
-    // Metodo
-    public function printFilmInfo() {
-        return "Titolo: {$this->title}, Durata: {$this->runningTime}, Genere: {$this->genre}.";
-    }
-}
+$miseria_nobilta = new Movie("Miseria e Nobiltà", "Italian", (new Genre ("Comedy")), "95 minutes");
 
-$titanic = new Movie("Titanic","English", "Drama","195 minutes");
-
-$the_big_lebowski = new Movie("The Big Lebowski", "English", "Comedy", "117 minutes");
-
-$miseria_nobilta = new Movie("Miseria e Nobiltà", "Italian", "Comedy", "95 minutes");
-
-var_dump($titanic);
-var_dump($the_big_lebowski);
-var_dump($miseria_nobilta);
+// var_dump($titanic);
+// var_dump($the_big_lebowski);
+// var_dump($miseria_nobilta);
 
 
 echo($titanic->printFilmInfo());
